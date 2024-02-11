@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webanwendung</title>
+</head>
+<body>
+    <h1>Webanwendung</h1>
+    <p>Aktuelle Uhrzeit: <span id="current-time">-</span></p>
+    <button onclick="updateTime()">Aktualisiere Uhrzeit</button>
+    <p>Zähler: <span id="counter">0</span></p>
+    <button onclick="incrementCounter()">Inkrementiere Zähler</button>
+
+    <script>
+        function updateTime() {
+            const currentTime = new Date().toLocaleTimeString();
+            document.getElementById('current-time').innerText = currentTime;
+        }
+
+        function incrementCounter() {
+            const counterElement = document.getElementById('counter');
+            let counterValue = parseInt(counterElement.innerText, 10);
+            counterValue++;
+            counterElement.innerText = counterValue;
+        }
+    </script>
+</body>
+</html>
